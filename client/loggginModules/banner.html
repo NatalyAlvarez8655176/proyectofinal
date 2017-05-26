@@ -11,14 +11,12 @@
         <li><a href="/soporte">soporte</a></li>
         <li><a href="#">USUARIOS</a></li>
         {{#if currentUser}}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Perfil_{{username}}<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-             <li> <a href="#" id="logout">cerrar sesion</a></li>
-             <li> <a href="#" id="pwcambio">cambiar contraseña</a></li>
-             <li> <a href="#" id="">cambiar datos</a></li>
-          </ul>
-        </li>
+          <div class="btn-group">
+             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Perfil_{{username}}<span class="caret"></span>
+              </button>
+            {{>mymenu}}
+          </div>
+
         {{else}}
           <li><a href="#" id="registro">Registro</a></li>
         {{/if}}
