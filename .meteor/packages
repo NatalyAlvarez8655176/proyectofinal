@@ -26,3 +26,8 @@ accounts-ui
 accounts-password
 alanning:roles
 aldeed:collection2
+
+mizzao:jquery-ui
+dburles:collection-helpers
+chrismbeckett:toastr
+raix:handlebar-helpers

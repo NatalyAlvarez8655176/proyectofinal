@@ -11,13 +11,34 @@
 <!-- ################################################################################################ -->
 <div class="row">
  {{>mainModuleLoggin}}
-</div >
+</div>
   {{>Template.dynamic template=banner}}
+  {{#if  currentUser}}
+                {{#if  isInRole 'soporte' 'admin'}}
+                      <div class="btn-group">
+                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Admin_{{username}}<span class="caret"></span>
+                          </button>
+                           <ul class="dropdown-menu">
+                              <li><a href="/"><span class="glyphicon glyphicon-user"></span>Perfil</a></li>
+                              <li><a href="#!"><span class="glyphicon glyphicon-envelope"></span>Notificaciones</a></li>
+                              <li><a href="/"><span class="glyphicon glyphicon-screenshot"></span>Sistema de baneo</a></li>
+                              <li><a href="/"><span class="glyphicon glyphicon-education"></span>Ver Cursos</a></li>
+                              <li><a href="/"><span class="glyphicon glyphicon-user"></span>Usuarios</a></li>
+                            </ul>
+                      </div>
+                {{#if isInRole 'soporte' 'profesor'}}
+                     <li><a class="glyphicon glyphicon-menu-down" href="#">.ADMINISTRAR_CURSOS</a>
+                      <ul>
+                        <li><a href="/cursos">CURSOS</a></li>
+                        <li><a href="/admicurso">NUEVO CURSO</a></li>
+                        <li><a href="">DAR DE BAJA</a></li>
+                        <li><a href="">OTROS</a></li>
+                      </ul>
+                    </li>
+                    {{/if}} 
+                {{/if}}    
+              {{/if}} 
 
-
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 
 
  <div class="wrapper row1">
@@ -37,19 +58,7 @@
             <li><a href="">Php web services</a></li>
             <li><a href="">Otros</a></li>
           </ul>
-        </li>
-            {{#if  currentUser}}
-                {{#if isInRole 'soporte' 'profesor'}}
-                     <li><a class="glyphicon glyphicon-menu-down" href="#">.ADMINISTRAR_CURSOS</a>
-                      <ul>
-                        <li><a href="/cursos">CURSOS</a></li>
-                        <li><a href="/admicurso">NUEVO CURSO</a></li>
-                        <li><a href="">DAR DE BAJA</a></li>
-                        <li><a href="">OTROS</a></li>
-                      </ul>
-                    </li> 
-                {{/if}}    
-              {{/if}}  
+        </li> 
         </ul>
     </nav>
     <!-- ################################################################################################ -->
