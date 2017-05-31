@@ -3,14 +3,20 @@
 <template name="banner">
 	<div class="wrapper row0">
   <div id="topbar" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <div class="fl_left">
-      <ul class="nospace">
-        <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+    <nav id="mainav" class="hoc clear">
+    <ul class="clear">
+        <li class="active"><a href="index.html">Home</a></li>
         <li><a href="">About</a></li>
         <li><a href="/soporte">soporte</a></li>
-        <li><a href="#">USUARIOS</a></li>
-        {{#if currentUser}}
+        <li><a class="drop" href="#">Cursos</a>
+        <ul>
+            <li><a href="">Operador basico de PC</a></li>
+            <li><a href="/cursos">Desarrollo web</a></li>
+            <li><a href="">Php web services</a></li>
+            <li><a href="">Otros</a></li> 
+        </ul>
+      </li>
+      {{#if currentUser}}
           <div class="btn-group">
              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Perfil_{{username}}<span class="caret"></span>
               </button>
@@ -20,9 +26,10 @@
         {{else}}
           <li><a href="#" id="registro">Registro</a></li>
         {{/if}}
+    </ul>
+    
+  </nav>
         
-      </ul>
-    </div>
     <div class="fl_right">
       <ul class="nospace">
         <li><i class="glyphicon glyphicon-earphone"></i> +591 79438307</li>
